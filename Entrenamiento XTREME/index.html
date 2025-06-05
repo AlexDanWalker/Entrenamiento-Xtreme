@@ -1,0 +1,146 @@
+<!-- Estructura básica del documento HTML -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café de la loma - Cafetería artesanal</title>
+  <!-- Enlace a la hoja de estilos externa -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Encabezado con navegación responsiva -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Café de la loma</div>
+
+      <!-- Checkbox para menú hamburguesa en móvil -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Menú de navegación -->
+      <ul class="menu">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#about">Sobre nosotros</a></li>
+        <li><a href="#location">Ubicación y horarios</a></li>
+        <li><a href="#reservations">Reservas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+
+    <!-- Sección principal con imagen de portada -->
+    <section id="hero" class="section hero">
+      <img 
+        src="Assets/Cafeartesanal.jpg" 
+        alt="Taza de café artesanal en un ambiente acogedor"
+      />
+      <div class="hero-text">
+        <h1>Café de la loma</h1>
+        <p>Disfruta de nuestros productos artesanales en un ambiente acogedor.</p>
+      </div>
+    </section>
+
+    <!-- Sección del menú de productos -->
+    <section id="menu" class="section">
+      <h2>Menú de productos</h2>
+      <div class="menu-grid">
+        <!-- Producto 1: Café -->
+        <div class="tarjeta">
+          <img src="Assets/cafe.jpg" alt="Café artesanal" style="width:100%; border-radius: var(--radio-bordes); margin-bottom: 1rem;">
+          <h3>Café</h3>
+          <ul>
+            <li>Espresso</li>
+            <li>Capuchino</li>
+            <li>Latte</li>
+          </ul>
+        </div>
+
+        <!-- Producto 2: Repostería -->
+        <div class="tarjeta">
+          <img src="Assets/reposteria.jpg" alt="Repostería" style="width:100%; border-radius: var(--radio-bordes); margin-bottom: 1rem;">
+          <h3>Repostería</h3>
+          <ul>
+            <li>Muffins</li>
+            <li>Tartas</li>
+            <li>Galletas</li>
+          </ul>
+        </div>
+
+        <!-- Producto 3: Sándwiches -->
+        <div class="tarjeta">
+          <img src="Assets/sandwich.jpg" alt="Sándwiches" style="width:100%; border-radius: var(--radio-bordes); margin-bottom: 1rem;">
+          <h3>Sándwiches</h3>
+          <ul>
+            <li>Jamón y queso</li>
+            <li>Pollo</li>
+            <li>Vegetariano</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección sobre la empresa -->
+    <section id="about" class="section about-section">
+      <h2>Sobre nosotros</h2>
+      <p>
+        Somos una cafetería artesanal apasionada por ofrecer productos de alta calidad y un ambiente acogedor.
+      </p>
+    </section>
+
+    <!-- Sección con la ubicación y mapa embebido -->
+    <section id="location" class="section">
+      <h2>Ubicación y Horarios</h2>
+      <p><strong>Dirección:</strong> Carrera 12 #9-31, Neiva, Huila, Colombia</p>
+      <p><strong>Horario:</strong> Lunes a Viernes: 7:00 AM - 8:00 PM | Sábado y Domingo: 8:00 AM - 6:00 PM</p>
+      
+      <!-- Mapa de Google Maps incrustado -->
+      <div id="map">
+        <iframe
+          src="https://www.google.com/maps/embed?... (truncado para claridad)"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa Café La Loma"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Formulario de reservas -->
+    <section id="reservations" class="section reservation-section">
+      <h2>Reservas</h2>
+      <form action="https://formsubmit.co/..." method="POST">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required minlength="3" />
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Teléfono:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9\s\-\+\(\)]{7,15}" />
+
+        <label for="date">Fecha y hora:</label>
+        <input type="datetime-local" id="date" name="date" required />
+
+        <button type="submit" class="boton">Reservar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2023 Café de la loma</p>
+  </footer>
+</body>
+</html>

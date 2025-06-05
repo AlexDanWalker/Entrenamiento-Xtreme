@@ -1,0 +1,355 @@
+/* ========== VARIABLES CSS ========== */
+:root {
+  --color-primario: #691f00f4;
+  --color-primario-hover: #562206;
+  --color-fondo: #fff;
+  --color-texto: #181818;
+  --color-secundario: #666;
+  --color-footer-fondo: #222;
+
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --fuente-secundaria: 'Georgia', serif;
+
+  --radio-bordes: 10px;
+  --transicion-corta: 0.3s ease-in-out;
+}
+
+/* ========== RESET BÁSICO ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, p, ul, li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========== BODY & TIPOGRAFÍA ========== */
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== HEADER & NAVEGACIÓN ========== */
+header {
+  background-color: var(--color-primario);
+  padding: 1rem 2rem;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  user-select: none;
+}
+
+/* Checkbox oculto para menú hamburguesa */
+.menu-toggle {
+  display: none;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: background-color var(--transicion-corta);
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color var(--transicion-corta);
+}
+
+.menu a:hover,
+.menu a:focus {
+  color: var(--color-primario-hover);
+  outline: none;
+}
+
+/* ========== MAIN & SECCIONES ========== */
+main {
+  flex-grow: 1;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+/* --- HERO --- */
+#hero {
+  position: relative;
+  text-align: center;
+}
+
+#hero img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radio-bordes);
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.hero-text {
+  margin-top: 1rem;
+}
+
+.hero-text h1 {
+  font-family: var(--fuente-secundaria);
+  font-size: 3rem;
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--color-secundario);
+}
+
+/* --- MENÚ --- */
+#menu h2 {
+  font-size: 2rem;
+  color: var(--color-primario);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.menu-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  background-color: var(--color-fondo);
+  border-radius: var(--radio-bordes);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  width: 300px;
+  transition: transform var(--transicion-corta), box-shadow var(--transicion-corta);
+  cursor: default;
+  
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 200px;         /* Altura fija para todas */
+  object-fit: cover;     /* Recorta o ajusta para cubrir el área sin deformar */
+  border-radius: var(--radio-bordes);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+
+.tarjeta:hover,
+.tarjeta:focus-within {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.tarjeta h3 {
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.tarjeta ul {
+  list-style: disc inside;
+  color: var(--color-secundario);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* --- SOBRE NOSOTROS --- */
+#about {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-secundario);
+}
+
+/* --- UBICACIÓN Y HORARIOS --- */
+#location {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--color-texto);
+}
+
+#location p {
+  margin-bottom: 0.5rem;
+}
+
+#map {
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radio-bordes);
+  background-color: #eee;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* --- RESERVAS --- */
+#reservations {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#reservations h2 {
+  font-size: 2rem;
+  color: var(--color-primario);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form label {
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+form input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color var(--transicion-corta);
+  font-family: inherit;
+}
+
+form input:focus {
+  border-color: var(--color-primario);
+  outline: none;
+}
+
+.boton {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: var(--radio-bordes);
+  cursor: pointer;
+  transition: background-color var(--transicion-corta);
+}
+
+.boton:hover,
+.boton:focus {
+  background-color: var(--color-primario-hover);
+  outline: none;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: var(--color-footer-fondo);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 2rem;
+    background-color: var(--color-primario);
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radio-bordes);
+    width: 180px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  /* ✅ Muestra el menú si el checkbox está marcado */
+  .menu-toggle:checked ~ .menu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .menu-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta {
+    width: 90vw;
+    max-width: 350px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .tarjeta {
+    width: 95vw;
+  }
+}
