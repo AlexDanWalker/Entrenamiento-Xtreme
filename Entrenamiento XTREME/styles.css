@@ -1,20 +1,23 @@
 /* ========== VARIABLES CSS ========== */
+/* Definición de variables CSS para mantener la consistencia en colores, fuentes, bordes y transiciones */
 :root {
-  --color-primario: #691f00f4;
-  --color-primario-hover: #562206;
-  --color-fondo: #fff;
-  --color-texto: #181818;
-  --color-secundario: #666;
-  --color-footer-fondo: #222;
+  --color-primario: #691f00f4;            /* Color principal utilizado en elementos destacados */
+  --color-primario-hover: #562206;        /* Color para el estado hover de elementos primarios */
+  --color-fondo: #fff;                     /* Color de fondo general del sitio */
+  --color-texto: #181818;                  /* Color principal del texto */
+  --color-secundario: #666;                /* Color para textos secundarios o menos destacados */
+  --color-footer-fondo: #222;              /* Color de fondo para el footer */
 
-  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --fuente-secundaria: 'Georgia', serif;
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal para el cuerpo */
+  --fuente-secundaria: 'Georgia', serif; /* Fuente secundaria usada en títulos destacados */
 
-  --radio-bordes: 10px;
-  --transicion-corta: 0.3s ease-in-out;
+  --radio-bordes: 10px;                    /* Radio de bordes para esquinas redondeadas */
+  --transicion-corta: 0.3s ease-in-out;   /* Duración y tipo de transición para efectos visuales */
 }
 
 /* ========== RESET BÁSICO ========== */
+/* Aplicación del box-sizing para incluir padding y borde dentro del ancho y alto definidos */
+/* Además se eliminan márgenes y rellenos predeterminados para elementos comunes para evitar inconsistencias */
 *,
 *::before,
 *::after {
@@ -27,21 +30,23 @@ body, h1, h2, h3, p, ul, li, figure, figcaption, blockquote, dl, dd {
 }
 
 ul {
-  list-style: none;
+  list-style: none; /* Se eliminan los estilos predeterminados de listas para personalizarlas */
 }
 
 /* ========== BODY & TIPOGRAFÍA ========== */
+/* Estilos básicos para el cuerpo de la página, incluyendo tipografía, colores y disposición flexible */
 body {
   font-family: var(--fuente-principal);
   background-color: var(--color-fondo);
   color: var(--color-texto);
-  line-height: 1.5;
-  min-height: 100vh;
-  display: flex;
+  line-height: 1.5;            /* Mejor legibilidad con interlineado adecuado */
+  min-height: 100vh;           /* Garantiza que el body ocupe al menos toda la altura de la ventana */
+  display: flex;               /* Flexbox para organizar el contenido verticalmente */
   flex-direction: column;
 }
 
 /* ========== HEADER & NAVEGACIÓN ========== */
+/* Estilo del encabezado con fondo primario, padding y sombra para dar profundidad */
 header {
   background-color: var(--color-primario);
   padding: 1rem 2rem;
@@ -50,6 +55,7 @@ header {
   position: relative;
 }
 
+/* Contenedor flexible para la barra de navegación, centrado y distribución entre elementos */
 .navbar {
   max-width: 1200px;
   margin: 0 auto;
@@ -59,18 +65,19 @@ header {
   position: relative;
 }
 
+/* Logo con peso tipográfico destacado y tamaño ajustado */
 .logo {
   font-weight: 700;
   font-size: 1.6rem;
-  user-select: none;
+  user-select: none; /* Previene que el texto del logo sea seleccionado accidentalmente */
 }
 
-/* Checkbox oculto para menú hamburguesa */
+/* Checkbox oculto que controla la visibilidad del menú hamburguesa en móviles */
 .menu-toggle {
   display: none;
 }
 
-/* Botón hamburguesa */
+/* Botón hamburguesa oculto por defecto, con disposición en columna y tamaño definido */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -81,9 +88,10 @@ header {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1001;
+  z-index: 1001; /* Se asegura que esté por encima de otros elementos */
 }
 
+/* Cada barra del icono hamburguesa con tamaño, color y transición para efectos visuales */
 .hamburger span {
   width: 100%;
   height: 3px;
@@ -92,11 +100,13 @@ header {
   transition: background-color var(--transicion-corta);
 }
 
+/* Menú principal con diseño flexible y separación entre enlaces */
 .menu {
   display: flex;
   gap: 1.5rem;
 }
 
+/* Enlaces del menú con color blanco, sin subrayado y transición en el color */
 .menu a {
   color: white;
   text-decoration: none;
@@ -105,6 +115,7 @@ header {
   transition: color var(--transicion-corta);
 }
 
+/* Cambio de color y eliminación de outline para enfoque y hover */
 .menu a:hover,
 .menu a:focus {
   color: var(--color-primario-hover);
@@ -112,36 +123,42 @@ header {
 }
 
 /* ========== MAIN & SECCIONES ========== */
+/* Contenedor principal con máximo ancho y centrado horizontal, con margen superior */
 main {
-  flex-grow: 1;
+  flex-grow: 1; /* Permite que el main crezca para ocupar espacio disponible */
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
   width: 100%;
 }
 
+/* Separación entre secciones del main */
 .section {
   margin-bottom: 3rem;
 }
 
 /* --- HERO --- */
+/* Contenedor con texto centrado y posición relativa para elementos hijos */
 #hero {
   position: relative;
   text-align: center;
 }
 
+/* Imagen principal del hero con tamaño responsivo, bordes redondeados y recorte adecuado */
 #hero img {
   width: 100%;
   height: auto;
   border-radius: var(--radio-bordes);
   max-height: 400px;
-  object-fit: cover;
+  object-fit: cover; /* Ajusta la imagen para cubrir el área sin deformarse */
 }
 
+/* Texto debajo de la imagen con margen superior para separación */
 .hero-text {
   margin-top: 1rem;
 }
 
+/* Título principal con fuente secundaria, tamaño grande y color primario */
 .hero-text h1 {
   font-family: var(--fuente-secundaria);
   font-size: 3rem;
@@ -149,12 +166,14 @@ main {
   margin-bottom: 0.5rem;
 }
 
+/* Párrafo con tamaño mediano y color secundario */
 .hero-text p {
   font-size: 1.2rem;
   color: var(--color-secundario);
 }
 
 /* --- MENÚ --- */
+/* Título de sección con tamaño destacado, color primario y centrado */
 #menu h2 {
   font-size: 2rem;
   color: var(--color-primario);
@@ -162,6 +181,7 @@ main {
   text-align: center;
 }
 
+/* Contenedor para las tarjetas del menú con flexbox, separación y envoltura */
 .menu-grid {
   display: flex;
   gap: 1.5rem;
@@ -169,6 +189,7 @@ main {
   flex-wrap: wrap;
 }
 
+/* Tarjetas individuales con fondo blanco, bordes redondeados, sombra y padding */
 .tarjeta {
   background-color: var(--color-fondo);
   border-radius: var(--radio-bordes);
@@ -176,32 +197,34 @@ main {
   padding: 1.5rem;
   width: 300px;
   transition: transform var(--transicion-corta), box-shadow var(--transicion-corta);
-  cursor: default;
-  
+  cursor: default; /* Cursor por defecto para no indicar clic */
 }
 
+/* Imagen dentro de tarjeta con tamaño fijo y ajuste para no deformar, bordes redondeados y margen inferior */
 .tarjeta img {
   width: 100%;
-  height: 200px;         /* Altura fija para todas */
-  object-fit: cover;     /* Recorta o ajusta para cubrir el área sin deformar */
+  height: 200px;         
+  object-fit: cover;
   border-radius: var(--radio-bordes);
   margin-bottom: 1rem;
   display: block;
 }
 
-
+/* Efectos hover y focus para resaltar la tarjeta con escalado y sombra */
 .tarjeta:hover,
 .tarjeta:focus-within {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+/* Título dentro de la tarjeta con color primario y tamaño mediano */
 .tarjeta h3 {
   color: var(--color-primario);
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
+/* Lista dentro de la tarjeta con estilo de lista de discos, color secundario y buen interlineado */
 .tarjeta ul {
   list-style: disc inside;
   color: var(--color-secundario);
@@ -210,6 +233,7 @@ main {
 }
 
 /* --- SOBRE NOSOTROS --- */
+/* Contenedor centrado con ancho limitado, texto centrado y color secundario */
 #about {
   max-width: 700px;
   margin: 0 auto;
@@ -219,16 +243,19 @@ main {
 }
 
 /* --- UBICACIÓN Y HORARIOS --- */
+/* Contenedor centrado con ancho limitado y color de texto principal */
 #location {
   max-width: 700px;
   margin: 0 auto;
   color: var(--color-texto);
 }
 
+/* Párrafos con margen inferior para separar elementos */
 #location p {
   margin-bottom: 0.5rem;
 }
 
+/* Contenedor del mapa con tamaño fijo, bordes redondeados, fondo gris claro y sombra interna */
 #map {
   margin-top: 1.5rem;
   width: 100%;
@@ -239,11 +266,13 @@ main {
 }
 
 /* --- RESERVAS --- */
+/* Contenedor para formulario con ancho limitado y centrado */
 #reservations {
   max-width: 500px;
   margin: 0 auto;
 }
 
+/* Título de la sección de reservas con tamaño destacado, color primario y centrado */
 #reservations h2 {
   font-size: 2rem;
   color: var(--color-primario);
@@ -251,31 +280,36 @@ main {
   text-align: center;
 }
 
+/* Formulario con diseño flexible vertical y separación entre campos */
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+/* Etiquetas de formulario con peso tipográfico y color de texto principal */
 form label {
   font-weight: 600;
   color: var(--color-texto);
 }
 
+/* Campos de entrada con padding, tamaño de fuente, borde suave, bordes redondeados y transición */
 form input {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   transition: border-color var(--transicion-corta);
-  font-family: inherit;
+  font-family: inherit; /* Hereda la fuente del contenedor */
 }
 
+/* Cambia el color del borde al enfocar el campo para mejor usabilidad */
 form input:focus {
   border-color: var(--color-primario);
   outline: none;
 }
 
+/* Botón con padding, fuente destacada, color de fondo primario y bordes redondeados */
 .boton {
   padding: 1rem;
   font-size: 1.1rem;
@@ -288,6 +322,7 @@ form input:focus {
   transition: background-color var(--transicion-corta);
 }
 
+/* Cambio de color de fondo en hover y focus para retroalimentación visual */
 .boton:hover,
 .boton:focus {
   background-color: var(--color-primario-hover);
@@ -295,6 +330,7 @@ form input:focus {
 }
 
 /* ========== FOOTER ========== */
+/* Pie de página con fondo oscuro, texto blanco centrado y tamaño de fuente reducido */
 footer {
   background-color: var(--color-footer-fondo);
   color: white;
@@ -304,7 +340,9 @@ footer {
 }
 
 /* ========== MEDIA QUERIES ========== */
+/* Ajustes para pantallas con ancho máximo de 768px (tabletas y móviles) */
 @media (max-width: 768px) {
+  /* Menú oculto inicialmente, con estilo tipo dropdown y fondo primario */
   .menu {
     display: none;
     position: absolute;
@@ -320,30 +358,35 @@ footer {
     z-index: 1000;
   }
 
-  /* ✅ Muestra el menú si el checkbox está marcado */
+  /* Mostrar menú cuando el checkbox del menú hamburguesa está activo */
   .menu-toggle:checked ~ .menu {
     display: flex;
   }
 
+  /* Mostrar el botón hamburguesa */
   .hamburger {
     display: flex;
   }
 
+  /* Menú de tarjetas en columna y centrado */
   .menu-grid {
     flex-direction: column;
     align-items: center;
   }
 
+  /* Tarjetas más anchas para pantallas pequeñas */
   .tarjeta {
     width: 90vw;
     max-width: 350px;
   }
 
+  /* Ajuste del tamaño del título principal en hero */
   .hero-text h1 {
     font-size: 2.5rem;
   }
 }
 
+/* Ajustes específicos para pantallas muy pequeñas (hasta 375px) */
 @media (max-width: 375px) {
   .hero-text h1 {
     font-size: 2rem;
