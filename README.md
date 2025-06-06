@@ -4,7 +4,7 @@ Sitio web oficial de **Café de la loma**, una cafetería artesanal ubicada en N
 
 ## Capturas de pantalla
 
-Ubica tus capturas en una carpeta llamada `Assets/` y nómbralas así:
+Ubica tus capturas en una carpeta llamada `Assets/` y nómbralas así (Intente hacer esto pero no tuve forma de hacer que las capturas se muestren, pero estan dentro de la carpeta Assets)
 
 ![Inicio](Assets/inicio.png) 
 ![Menú](Entrenamiento-XTREME/Assets/menu.png) 
